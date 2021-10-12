@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
+</head>
+
+<body>
+    <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <button id="lizard">Lizard</button>
+    <button id="spock">Spock</button>
+
+    <p></p>
+
+    <script type="text/javascript">
+        const buttons = document.querySelectorAll('button')
+        // [button, button, button, button] 
+        // buttons[i] = e 
+
+        buttons.forEach((e, i) => {
+            e.addEventListener('click', () => {
+                const player = e.id
+
+                fetch(`/api?player=${player}`)
+                    .then(response => response.json())
+                    .then((data) => {
+                        const answer = document.querySelector('p')
+                        answer.textContent = `${data.result} computer chose ${data.opponent}`
+                    });
+            })
+        }) // 
+    </script>
+</body>
+
+</html>
