@@ -1,0 +1,20 @@
+{
+  "name": "rock-lizard-spock",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "figlet": "^1.5.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jean",
+  "license": "ISC",
+  "description": ""
+}
